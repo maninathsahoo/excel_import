@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>All Data</title>
+
+</head>
+<body>
+{% if data %}
+
+    <table border="2">
+    <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>DOB</th>
+
+    {% for i in data %}
+        <tbody>
+        <tr>
+
+            <td>{{ i.name }}</td>
+            <td>{{ i.email_id }}</td>
+            <td>{{ i.phone_number }}</td>
+            <td>{{ i.dob }}</td>
+        </tr>
+        </tbody>
+    {% endfor %}
+    </table>
+    {% else %}
+    <h2>No data</h2>
+{% endif %}
+</body>
+</html>

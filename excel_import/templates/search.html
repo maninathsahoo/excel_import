@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Data</title>
+    <style>
+        table{
+            width: 80px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<form action="{% url 'search' %}" method="GET" value="{{ request.GET.q }}">
+
+    search:<input type="text" name="q">
+     <input type="submit" value="search">
+
+<table border="1">
+    <thead>
+    <th>Name</th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+    <th>Email</th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <th>Phone</th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <th>Age(in years)</th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    </thead>
+    {% if results %}
+    <tr>
+    {% for i in results %}
+    <td>{{i.name }}</td>
+    <td>{{i.email_id }}</td>
+    <td>{{i.phone_number }}</td>
+    <td>{{i.age }}</td>
+    {% endfor %}
+    </tr>
+    {% endif %}
+</table>
+
+</form>
+</body>
+</html>
